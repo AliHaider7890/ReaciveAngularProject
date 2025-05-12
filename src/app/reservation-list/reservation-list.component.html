@@ -1,0 +1,68 @@
+<!-- <p>reservation-list works!</p>
+<app-home></app-home>
+<h2>
+    This is the Reservation List
+</h2>
+
+<ul>
+    <li *ngFor="let reservation of reservations">
+        Guest : {{reservation.guestName}} <br>
+        Email : {{reservation.guestEmail}} <br>
+        Room No. : {{reservation.roomNumber}} <br>
+        Check In Date : {{reservation.checkInDate}} <br>
+        Check Out Date : {{reservation.checkOutDate}} <br>
+        <button (click) = "deleteReservation(reservation.id)"> Delete </button>
+        <button [routerLink]="['/edit', reservation.id]">Edit</button>
+    </li>
+</ul>
+
+
+<ul *ngIf="reservations.length; else noReservation">
+
+</ul>
+
+<ng-template #noReservation>
+    <p>No reservation available.</p>
+</ng-template> -->
+
+<!-- reservation-list.component.html -->
+
+<app-home></app-home>
+
+<div style="max-width: 800px; margin: auto; padding: 1rem;">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Reservation List</h2>
+
+  <!-- If Reservations Exist -->
+  <ul *ngIf="reservations.length; else noReservation" style="list-style: none; padding: 0;">
+    <li
+      *ngFor="let reservation of reservations"
+      style="border: 1px solid #ddd; padding: 1rem; margin-bottom: 1rem; border-radius: 6px; background-color: #f9f9f9;"
+    >
+      <p><strong>Guest:</strong> {{ reservation.guestName }}</p>
+      <p><strong>Email:</strong> {{ reservation.guestEmail }}</p>
+      <p><strong>Room No:</strong> {{ reservation.roomNumber }}</p>
+      <p><strong>Check-In:</strong> {{ reservation.checkInDate }}</p>
+      <p><strong>Check-Out:</strong> {{ reservation.checkOutDate }}</p>
+
+      <div style="margin-top: 0.5rem;">
+        <button
+          (click)="deleteReservation(reservation.id)"
+          style="padding: 0.4rem 1rem; background-color: #dc3545; color: white; border: none; border-radius: 4px; margin-right: 0.5rem;"
+        >
+          Delete
+        </button>
+        <button
+          [routerLink]="['/edit', reservation.id]"
+          style="padding: 0.4rem 1rem; background-color: #007bff; color: white; border: none; border-radius: 4px;"
+        >
+          Edit
+        </button>
+      </div>
+    </li>
+  </ul>
+
+  <!-- If No Reservations -->
+  <ng-template #noReservation>
+    <p style="text-align: center; color: gray;">No reservation available.</p>
+  </ng-template>
+</div>

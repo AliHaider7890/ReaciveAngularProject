@@ -1,0 +1,29 @@
+<!-- 
+<div>
+
+    <h2>-- Welcome To the Hotel Reservation Portal --</h2>
+    <button [routerLink]="['/new']"  >  Add New Reservation </button>
+    <button  [routerLink]="['/list']" >    View All Reservation </button>
+
+</div> -->
+
+<div style="max-width: 500px; margin: 3rem auto; padding: 2rem; border: 1px solid #ccc; border-radius: 8px; background-color: #fdfdfd; text-align: center;">
+
+    <h2 style="color: #2c3e50; margin-bottom: 1.5rem;">🏨 Welcome To the Hotel Reservation Portal</h2>
+  
+    <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <button 
+        [routerLink]="['/new']"
+        style="padding: 0.6rem 1.2rem; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        ➕ Add Reservation
+      </button>
+  
+      <button 
+        [routerLink]="['/list']"
+        style="padding: 0.6rem 1.2rem; background-color: #2196F3; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        📋 View Reservations
+      </button>
+    </div>
+  
+  </div>
+  
